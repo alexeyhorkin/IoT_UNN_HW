@@ -1,0 +1,469 @@
+[
+    {
+        "id": "b04f078d9283f9d7",
+        "type": "tab",
+        "label": "Поток 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d35e3bd91e5a1209",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "q1dx4IK6VipQ9XwDAX8i",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "21d4497b371d500d",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "q1dx4IK6VipQ9XwDAX8i",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "73b31d836c325695",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "Up4A41iDmX69X8OVuWCF",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2ec7a0b63f199425",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "NeqiVxTAKj9Ab3l8iZBV",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "afe80dcef4c31911",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "E2LPQHWTs1U4iBpcvy3A",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fe73395e865195c0",
+        "type": "inject",
+        "z": "b04f078d9283f9d7",
+        "name": "Источник температуры",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "data",
+        "payloadType": "str",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "c8f2d7c471a7ceb2"
+            ]
+        ]
+    },
+    {
+        "id": "fc46235ec1da4954",
+        "type": "inject",
+        "z": "b04f078d9283f9d7",
+        "name": "Источник давления",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "0275a95fbaef8048",
+                "82513d4cb7b1c1a8",
+                "a67a418b96b80f26",
+                "85cf69cdafb342ee"
+            ]
+        ]
+    },
+    {
+        "id": "eed9bcc63aab3389",
+        "type": "inject",
+        "z": "b04f078d9283f9d7",
+        "name": "Источник скорости",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 160,
+        "y": 700,
+        "wires": [
+            [
+                "3be4f4eb80216967"
+            ]
+        ]
+    },
+    {
+        "id": "0275a95fbaef8048",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "Pressure 1",
+        "func": "const payload = {Pressure: 2.1 + (Math.random() - 0.5) / 5};\nmsg.payload = JSON.stringify(payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "51b3922eb0c7dd3a",
+                "0d61f3dd7c4563f8"
+            ]
+        ]
+    },
+    {
+        "id": "82513d4cb7b1c1a8",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "Pressure 2",
+        "func": "const payload = {Pressure: 2.1 + (Math.random() - 0.5) / 5};\nmsg.payload = JSON.stringify(payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a67a418b96b80f26",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "Pressure 3",
+        "func": "const payload = {Pressure: 2.3 + (Math.random() - 0.5) / 5};\nmsg.payload = JSON.stringify(payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 560,
+        "wires": [
+            [
+                "a277d51575117489"
+            ]
+        ]
+    },
+    {
+        "id": "85cf69cdafb342ee",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "Pressure 4",
+        "func": "const payload = {Pressure: 2.3 + (Math.random() - 0.5) / 5};\nmsg.payload = JSON.stringify(payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8f2d7c471a7ceb2",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "Outside Temperature",
+        "func": "function randomInteger(min, max) {\n  let rand = min - 0.5 + Math.random() * (max - min + 1);\n  return Math.round(rand);\n}\nconst payload = {TemperatureOutside: randomInteger(-25, 35)};\nmsg.payload = JSON.stringify(payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "92f1a7773f537524",
+                "803ab2b4daa0c436",
+                "dcde4fb3155bbe6e"
+            ]
+        ]
+    },
+    {
+        "id": "803ab2b4daa0c436",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "Inside Temperature",
+        "func": "let data = JSON.parse(msg.payload);\ndata.TemperatureInside = 15 + 5 * data.TemperatureOutside / 35;\ndata.TemperatureInside = Math.round(data.TemperatureInside);\ndelete data.TemperatureOutside\n\nmsg.payload = JSON.stringify(data);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 180,
+        "wires": [
+            [
+                "bf8d0f08a8e3f750",
+                "4ea4f5947d429cc9"
+            ]
+        ]
+    },
+    {
+        "id": "3be4f4eb80216967",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "92f1a7773f537524",
+        "type": "debug",
+        "z": "b04f078d9283f9d7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "bf8d0f08a8e3f750",
+        "type": "debug",
+        "z": "b04f078d9283f9d7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "dcde4fb3155bbe6e",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "Термометр 1",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "73b31d836c325695",
+        "x": 1080,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4ea4f5947d429cc9",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "Термометр 2",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21d4497b371d500d",
+        "x": 1080,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "51b3922eb0c7dd3a",
+        "type": "debug",
+        "z": "b04f078d9283f9d7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0d61f3dd7c4563f8",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "Давление 1",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2ec7a0b63f199425",
+        "x": 1070,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a277d51575117489",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "Давление 3",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "afe80dcef4c31911",
+        "x": 1070,
+        "y": 560,
+        "wires": []
+    }
+]
