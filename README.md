@@ -1,16 +1,22 @@
 # IoT_UNN_HW
 
-Все необходимые данные находятся в скрытых директорях `.mytb-data`, `.mytb-logs`, `.node-red-data`. Все эти директории являются volumes для контейнеров `node-red` и `thingsboard`.
+Репозиторий для сдачи домашнего задания по курсу "Интернет вещей" 2021.
+
+Все необходимые данные для `thingsboard` находятся в скрытых директорях `.mytb-data`, `.mytb-logs`, данные для `node-red` находятся в `.node-red-data`. Все эти директории являются volumes для контейнеров.
 
 ## Запуск
 ---
-### Linux only
-
+### Linux
 ```console
+mkdir .mytb-logs
 sudo chown -R 799:799 .mytb-data
 sudo chown -R 799:799 .mytb-logs
 ```
-На мак эти действия выполнять не нужно
+### Mac-OS
+На Mac-OS эти действия выполнять не нужно, работает out-of-the-box.
+
+### Windows
+Не тестировалось, скорее всего не работает =)
 
 ---
 ### Main command
@@ -31,5 +37,5 @@ docker-compose up
 
 ## Credentials:
 * System Administrator: sysadmin@thingsboard.org / sysadmin
-* Tenant Administrator: tenant@thingsboard.org / tenant
+* Tenant Administrator: tenant@thingsboard.org / tenant [мы используем эту учётную запись ✔️]
 * Customer User: customer@thingsboard.org / customer
