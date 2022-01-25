@@ -138,6 +138,110 @@
         "sessionExpiry": ""
     },
     {
+        "id": "110a54e0131729e8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "jMe3QpBjaGAybpBYaikX",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bf48ef90aeb07ad3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "BWe3XrXJXE4b0HX5qFYO",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2b7c2a3923bf6d11",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "KG3p2ldHhWbhHOVQVPNO",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dedebf9df8fe2a9f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mytb",
+        "port": "1883",
+        "clientid": "Hr73n9nHyYhA1sLTZpvE",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
         "id": "fe73395e865195c0",
         "type": "inject",
         "z": "b04f078d9283f9d7",
@@ -200,7 +304,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "0.2",
+        "repeat": "0.3",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
@@ -249,7 +353,9 @@
         "x": 450,
         "y": 500,
         "wires": [
-            []
+            [
+                "e24328c254703cc3"
+            ]
         ]
     },
     {
@@ -285,7 +391,9 @@
         "x": 450,
         "y": 620,
         "wires": [
-            []
+            [
+                "b11cfdfee8163b89"
+            ]
         ]
     },
     {
@@ -333,17 +441,19 @@
         "id": "3be4f4eb80216967",
         "type": "function",
         "z": "b04f078d9283f9d7",
-        "name": "",
-        "func": "\nreturn msg;",
+        "name": "Speed func",
+        "func": "const payload = {Speed: 55 + 5*Math.random()};\nmsg.payload = JSON.stringify(payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 450,
         "y": 700,
         "wires": [
-            []
+            [
+                "ccf02879b25fa89c"
+            ]
         ]
     },
     {
@@ -374,7 +484,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
+        "x": 810,
         "y": 240,
         "wires": []
     },
@@ -464,6 +574,139 @@
         "broker": "afe80dcef4c31911",
         "x": 1070,
         "y": 560,
+        "wires": []
+    },
+    {
+        "id": "e24328c254703cc3",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "Давление 2",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "110a54e0131729e8",
+        "x": 1070,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b11cfdfee8163b89",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "Давление 4",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf48ef90aeb07ad3",
+        "x": 1070,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ccf02879b25fa89c",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "Спидометр",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2b7c2a3923bf6d11",
+        "x": 1070,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "851457d64f2d30fc",
+        "type": "inject",
+        "z": "b04f078d9283f9d7",
+        "name": "Источник координат",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 150,
+        "y": 820,
+        "wires": [
+            [
+                "31aafd3ca47a4a17"
+            ]
+        ]
+    },
+    {
+        "id": "31aafd3ca47a4a17",
+        "type": "function",
+        "z": "b04f078d9283f9d7",
+        "name": "",
+        "func": "const eps = 20;\n// const payload = {};\n// if (msg.payload.hasOwnProperty('lat') && msg.payload.hasOwnProperty('lon')) {\n//     const payload = {lat: msg.payload.lat + Math.random()/eps,\n//                      lon: msg.payload.lon + Math.random()/eps};\n// } else {\n//     const payload = {lat: 56.297741 + Math.random()/eps, lon: 43.980215 + Math.random()/eps, };\n// }\n const payload = {lat: 56.297741 + Math.random()/eps, lon: 43.980215 + Math.random()/eps, };\nmsg.payload = JSON.stringify(payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 820,
+        "wires": [
+            [
+                "8c00402f35850296",
+                "3e5de4786407ddbb"
+            ]
+        ]
+    },
+    {
+        "id": "8c00402f35850296",
+        "type": "mqtt out",
+        "z": "b04f078d9283f9d7",
+        "name": "GPS",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "dedebf9df8fe2a9f",
+        "x": 1040,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "3e5de4786407ddbb",
+        "type": "debug",
+        "z": "b04f078d9283f9d7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 940,
         "wires": []
     }
 ]
