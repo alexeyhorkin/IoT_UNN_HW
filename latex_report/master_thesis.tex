@@ -1,0 +1,167 @@
+\documentclass[a4paper,12pt, titlepage]{report} % размер бумаги устанавливаем А4, шрифт 12пунктов
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % включаем свою кодировку: koi8-r или utf8 в UNIX, cp1251 в Windows
+\usepackage[english,russian]{babel} % используем русский и английский языки с переносами
+\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float} % подключаем нужные пакеты расширений
+\usepackage[dvips]{graphicx} % хотим вставлять в диплом рисунки?
+\usepackage{graphicx}
+\usepackage{grffile}
+\graphicspath{{figure/}} % путь к рисункам
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=2.5cm} % левое поле
+\geometry{right=1.5cm} % правое поле
+\geometry{top=2cm} % верхнее поле
+\geometry{bottom=2cm} % нижнее поле
+
+\renewcommand{\theenumi}{\arabic{enumi}.} % Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}.} % Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}.} % Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.} % Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}.} % Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.} % Меняем везде перечисления на цифра.цифра
+
+%\usepackage{fontspec} % Подключение специальных шрифтов
+%\setmainfont[Mapping=tex-text]{Times New Roman}  % Times New Roman
+
+\usepackage[onehalfspacing]{setspace} %"умное" расстояние между строк - установить 1.5 интервала от нормального, эквивалентно
+
+\usepackage{indentfirst} % Отделять первую строку раздела абзацным отступом тоже
+
+\newcommand{\empline}{\mbox{}\newline}
+\newcommand{\likechapterheading}[1]{
+	\begin{center}
+		\textbf{\MakeUppercase{#1}}
+	\end{center}
+}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\filcenter}{\MakeUppercase{\chaptertitlename} \thechapter}{8pt}{\bfseries \MakeUppercase}{}\titleformat{\section}{\normalsize\bfseries}   {\thesection.}{1em}{}\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}% Настройка вертикальных и горизонтальных отступов
+\titlespacing*{\chapter}{0pt}{-30pt}{8pt}
+\titlespacing*{\section}{\parindent}{*4}{*1}
+\titlespacing*{\subsection}{\parindent}{*4}{*1}
+\titlespacing*{\subsubsection}{\parindent}{*4}{*1}
+
+\makeatletter
+\renewcommand{\@dotsep}{2}\newcommand{\l@likechapter}[2]{{\bfseries\@dottedtocline{1}{0pt}{0pt}{#1}{#2} }} \makeatother \newcommand{\likechapter}[1]{
+\newpage \likechapterheading{#1}
+
+\addcontentsline{toc}{likechapter}{\MakeUppercase{#1}}}
+
+\usepackage{tocloft}
+\renewcommand\contentsname{Оглавление}
+\renewcommand{\cfttoctitlefont}{\hspace{0.38\textwidth}\bfseries\MakeUppercase } % Оформление надписи Оглавление
+\renewcommand{\cftbeforetoctitleskip}{-1em}
+%\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-2.5em}} % Добавим надпись стр.
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % Отточия после глав
+\renewcommand{\cftchapaftersnum}{.} % Точка после номера главы
+\renewcommand{\cftsecaftersnum}{.} % Точка после номера параграфа
+
+%\renewcommand{\cftchapfont}{\normalsize\bfseries \MakeUppercase{\chaptername} } % Оформления надписи Глава
+\renewcommand{\cftsecfont}{\hspace{15pt}} % Сдвиг названия секции от левого края
+\renewcommand{\cftsubsecfont}{\hspace{1pt}}
+\renewcommand{\cftbeforechapskip}{1em}
+\renewcommand{\cftparskip}{-1mm}
+\renewcommand{\cftdotsep}{1} \setcounter{tocdepth}{1} % Задать глубину оглавления — до subsection включительно
+\renewcommand{\cftdotsep}{2} \setcounter{tocdepth}{2} % Задать глубину оглавления — до subsubsection включительно
+
+% Оформление подписи к рисункам и таблицам
+\usepackage[font=small, tableposition=top]{caption}
+\usepackage{subcaption}
+\DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
+\DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+\DeclareCaptionLabelSeparator{gost}{. }
+\captionsetup{labelsep=gost}
+\captionsetup[figure]{labelformat=gostfigure}
+\captionsetup[table]{labelformat=gosttable}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+
+\usepackage[title,titletoc]{appendix}
+\titleformat{\paragraph}[display]{\filcenter}{\MakeUppercase{\chaptertitlename} \thechapter}{8pt}{\bfseries}{}
+\titlespacing*{\paragraph}{0pt}{-30pt}{8pt}
+\newcommand{\append}[1]{\clearpage
+\stepcounter{chapter}
+\paragraph{\MakeUppercase{#1}}
+\empline     \addcontentsline{toc}{likechapter}{\MakeUppercase{\chaptertitlename~\Asbuk{chapter}.\;#1}}}
+
+\bibliographystyle{utf8gost705u}
+%\usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage[square,numbers,sort&compress]{natbib}
+\renewcommand{\bibnumfmt}[1]{#1.\hfill} % нумерация источников в самом списке — через точку
+\renewcommand{\bibsection}{\likechapter{Литература}} % заголовок специального раздела
+\setlength{\bibsep}{0pt}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  numbers=left,               % где поставить нумерацию строк (слева\справа)
+  numberstyle=\tiny  
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+%\usepackage[koi8-r]{inputenc}%включаем свою кодировку: koi8-r или utf8 в UNIX, cp1251 в Windows
+
+\usepackage{enumitem}
+\makeatletter
+\AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
+\makeatother
+\setlist{nolistsep}
+\renewcommand{\labelitemi}{-}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+%\newtheorem{thm}{Theorem}[subsection]
+%\newtheorem{defn}[thm]{Definition}
+\newtheorem{St}{Утверждение}
+\newtheorem{Th}{Теорема}
+\newtheorem{Cor}{Следствие}
+\newtheorem{Lm}{Лемма}
+
+\usepackage{hyperref} 
+\begin{document}
+
+	\singlespacing % Одинарный междустрочный интервал
+	\input{Title} % Это титульный лист
+	\setcounter{page}{2} % Нумерация страниц со 2-й, 1-й является титульная страница
+	\onehalfspacing % Полуторный междустрочный интервал
+	\setlength{\parindent}{1.25cm} % Абзацный отступ
+	% \input{Annotation}
+	\def\contentsname{Содержание} % "Оглавление" вместо "Содержание"
+	\def\bibname{Литература}
+	\tableofcontents % Это оглавление, которое генерируется автоматически
+	\input{Introduction}
+	\input{Main_part}
+	\input{Conclusion}
+	% \bibliography{bibliography}
+	% \input{attachment}
+
+\end{document}
