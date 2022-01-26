@@ -422,7 +422,7 @@
         "type": "function",
         "z": "b04f078d9283f9d7",
         "name": "Inside Temperature",
-        "func": "let data = JSON.parse(msg.payload);\ndata.TemperatureInside = 15 + 5 * data.TemperatureOutside / 35;\ndata.TemperatureInside = Math.round(data.TemperatureInside);\ndelete data.TemperatureOutside\n\nmsg.payload = JSON.stringify(data);\nreturn msg;",
+        "func": "let data = JSON.parse(msg.payload);\ndata.TemperatureInside = data.TemperatureOutside + 10 * Math.random();\ndata.TemperatureInside = Math.round(data.TemperatureInside);\ndelete data.TemperatureOutside\n\nmsg.payload = JSON.stringify(data);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
