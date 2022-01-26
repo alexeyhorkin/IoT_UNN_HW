@@ -4,7 +4,7 @@
 
 Все необходимые данные для `thingsboard` находятся в скрытых директорях `.mytb-data`, `.mytb-logs`, данные для `node-red` находятся в `.node-red-data`. Все эти директории являются volumes для контейнеров.
 
-## Запуск
+## Launch
 ---
 ### Linux
 ```console
@@ -41,3 +41,6 @@ docker-compose up
 * System Administrator: sysadmin@thingsboard.org / sysadmin
 * Tenant Administrator: tenant@thingsboard.org / tenant [мы используем эту учётную запись ✔️]
 * Customer User: customer@thingsboard.org / customer
+
+## Report
+Отчёт содержится в [latex_report](./latex_report) папке. 
